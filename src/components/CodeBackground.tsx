@@ -27,6 +27,14 @@ const CODE_SNIPPETS = [
   'setHistory(prev => [...prev, { command: cmd }])',
 ]
 
+interface CodeLine {
+  text: string;
+  x: number;
+  y: number;
+  speed: number;
+  opacity: number;
+}
+
 export function CodeBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
@@ -49,23 +57,23 @@ export function CodeBackground() {
     const fontSize = 16
     ctx.font = `${fontSize}px "Courier New", monospace`
     const lineHeight = fontSize * 1.5
-    const columns = Math.floor(canvas.width / (fontSize * 0.6))
-    const rows = Math.floor(canvas.height / lineHeight)
 
     // Initialize code matrix with more lines
-    const codeMatrix = Array(rows * 2).fill(null).map(() => ({
-      text: CODE_SNIPPETS[Math.floor(Math.random() * CODE_SNIPPETS.length)],
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      speed: 0.3 + Math.random() * 0.4,
-      opacity: 0.05 + Math.random() * 0.05
-    }))
+    const codeMatrix: CodeLine[] = Array(Math.floor((window.innerHeight / lineHeight) * 2))
+      .fill(null)
+      .map(() => ({
+        text: CODE_SNIPPETS[Math.floor(Math.random() * CODE_SNIPPETS.length)],
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        speed: 0.3 + Math.random() * 0.4,
+        opacity: 0.05 + Math.random() * 0.05
+      }))
 
     // Animation
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-      codeMatrix.forEach((line, i) => {
+      codeMatrix.forEach((line) => {
         ctx.fillStyle = `rgba(40, 255, 40, ${line.opacity})`
         ctx.fillText(line.text, line.x, line.y)
 

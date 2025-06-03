@@ -15,13 +15,19 @@ interface CommandHistory {
   path?: string
 }
 
+type CommandFunction = (args?: string) => string;
+
+interface Commands {
+  [key: string]: CommandFunction;
+}
+
 export function Terminal({ initialMessage = `yo! 
 this is yusuf! type 'help' to see available commands.` }: TerminalProps) {
   const [input, setInput] = useState('')
   const [history, setHistory] = useState<CommandHistory[]>([])
-  const [currentPath, setCurrentPath] = useState('~')
+  const [currentPath] = useState('~')
   const terminalRef = useRef<HTMLDivElement>(null)
-  const { theme, setTheme } = useTheme()
+  const { theme: _ } = useTheme() // Unused theme variables removed
 
   const socialLinks = {
     github: 'https://github.com/notyourcfo',
@@ -33,7 +39,7 @@ this is yusuf! type 'help' to see available commands.` }: TerminalProps) {
     email: 'mailto:usef@techhustlr.space'
   }
 
-  const commands = {
+  const commands: Commands = {
     help: () => `available commands:
   about - about me
   projects - check out my projects
@@ -114,7 +120,7 @@ last updated: march 6, 2025 19:29
 changelog:
 - created site from scratch`,
 
-    ...Object.entries(socialLinks).reduce((acc, [platform, url]) => ({
+    ...Object.entries(socialLinks).reduce<Commands>((acc, [platform, url]) => ({
       ...acc,
       [platform]: () => {
         window.open(url, '_blank')
@@ -126,12 +132,13 @@ changelog:
   const handleCommand = (cmd: string) => {
     const [command, ...args] = cmd.trim().split(' ')
     const cmdLower = command.toLowerCase()
-    let output = (commands as any)[cmdLower]?.(args.join(' '))
+    const commandFn = commands[cmdLower]
+    const output = commandFn ? commandFn(args.join(' ')) : `invalid command: ${command}`
 
     setHistory(prev => [...prev, {
       command: cmd,
-      output: output ?? `invalid command: ${command}`,
-      isError: !output,
+      output,
+      isError: !commandFn,
       path: currentPath
     }])
   }
@@ -180,8 +187,8 @@ changelog:
         ref={terminalRef}
       >
         <div className="space-y-2 text-sm sm:text-base whitespace-pre-wrap">
-          {history.map((entry, i) => (
-            <div key={i} className="space-y-1">
+          {history.map((entry, index) => (
+            <div key={index} className="space-y-1">
               {entry.command && (
                 <div className="flex flex-wrap sm:flex-nowrap items-center">
                   <span className="text-blue-400">{entry.path}</span>
@@ -202,15 +209,8 @@ changelog:
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleSubmit}
-              className="ml-1 sm:ml-2 bg-transparent outline-none flex-1 min-w-[200px] text-terminal-text"
+              className="flex-1 ml-1 sm:ml-2 bg-transparent outline-none"
               autoFocus
-              onFocus={(e) => {
-                const viewport = document.querySelector('meta[name=viewport]')
-                if (viewport) {
-                  viewport.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1')
-                }
-                e.currentTarget.focus()
-              }}
             />
           </div>
         </div>
