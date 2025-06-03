@@ -27,7 +27,7 @@ A retro-style terminal portfolio website built with Next.js and TypeScript, feat
 
 ## Tech Stack
 
-- Next.js 15.3.3
+- Next.js 14.1.0
 - TypeScript
 - Tailwind CSS
 - Framer Motion
@@ -37,12 +37,12 @@ A retro-style terminal portfolio website built with Next.js and TypeScript, feat
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/notyourcfo/personal-site-.git
+   git clone https://github.com/notyourcfo/personal-site.git
    ```
 
 2. Install dependencies:
    ```bash
-   cd personal-site-
+   cd personal-site
    npm install
    ```
 
