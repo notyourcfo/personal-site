@@ -4,6 +4,8 @@ import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useTheme } from 'next-themes'
 
+const SPINNER_FRAMES = ['/', '—', '\\', '|']
+
 interface TerminalProps {
   initialMessage?: string
 }
@@ -13,6 +15,7 @@ interface CommandHistory {
   output: string
   isError?: boolean
   path?: string
+  isLoading?: boolean
 }
 
 type CommandFunction = (args?: string) => string;
@@ -26,6 +29,7 @@ this is yusuf! type 'help' to see available commands.` }: TerminalProps) {
   const [input, setInput] = useState('')
   const [history, setHistory] = useState<CommandHistory[]>([])
   const [currentPath] = useState('~')
+  const [spinnerFrame, setSpinnerFrame] = useState(0)
   const terminalRef = useRef<HTMLDivElement>(null)
   const { theme: _ } = useTheme() // Unused theme variables removed
 
@@ -110,7 +114,10 @@ type any of these commands to open the respective profile:
     },
     
     clear: () => {
-      setHistory(prev => prev.filter(entry => !entry.command))
+      setHistory([
+        { command: '', output: 'yo!' },
+        { command: '', output: "this is yusuf! type 'help' to see available commands." }
+      ])
       return ''
     },
     
@@ -133,14 +140,32 @@ changelog:
     const [command, ...args] = cmd.trim().split(' ')
     const cmdLower = command.toLowerCase()
     const commandFn = commands[cmdLower]
-    const output = commandFn ? commandFn(args.join(' ')) : `invalid command: ${command}`
-
+    
+    // First add the command to history with loading state
     setHistory(prev => [...prev, {
       command: cmd,
-      output,
-      isError: !commandFn,
+      output: '',
+      isLoading: true,
       path: currentPath
     }])
+
+    // Add delay before showing output
+    setTimeout(() => {
+      const output = commandFn ? commandFn(args.join(' ')) : `invalid command: ${command}`
+      
+      setHistory(prev => {
+        const newHistory = [...prev]
+        const lastIndex = newHistory.length - 1
+        newHistory[lastIndex] = {
+          command: cmd,
+          output,
+          isError: !commandFn,
+          path: currentPath,
+          isLoading: false
+        }
+        return newHistory
+      })
+    }, 500) // 500ms delay
   }
 
   const handleSubmit = (e: React.KeyboardEvent) => {
@@ -164,6 +189,15 @@ changelog:
       terminalRef.current.scrollTop = terminalRef.current.scrollHeight
     }
   }, [history])
+
+  useEffect(() => {
+    let frameId: NodeJS.Timeout
+    const animate = () => {
+      setSpinnerFrame(prev => (prev + 1) % SPINNER_FRAMES.length)
+    }
+    frameId = setInterval(animate, 40) // Update every 40ms for faster spinning
+    return () => clearInterval(frameId)
+  }, [])
 
   return (
     <motion.div
@@ -197,7 +231,13 @@ changelog:
                 </div>
               )}
               <div className={`whitespace-pre-wrap break-words ${entry.isError ? 'text-red-400' : ''}`}>
-                {entry.output}
+                {entry.isLoading ? (
+                  <span className="text-yellow-400 inline-block">
+                    <span className="inline-block w-4">{SPINNER_FRAMES[spinnerFrame]}</span>
+                  </span>
+                ) : (
+                  entry.output
+                )}
               </div>
             </div>
           ))}
