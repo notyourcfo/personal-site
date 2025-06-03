@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Terminal Portfolio",
   description: "A terminal-style personal website",
+  themeColor: "#000000"
 };
 
 export default function RootLayout({
@@ -16,8 +17,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className="dark">
-      <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning className="dark" style={{ colorScheme: 'dark' }}>
+      <head>
+        <meta name="color-scheme" content="dark" />
+      </head>
+      <body className={`${inter.className} bg-black text-[#00ff00]`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -25,7 +29,9 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          {children}
+          <div className="min-h-screen bg-black">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

@@ -4,15 +4,34 @@
 
 :root {
   color-scheme: dark;
+  --foreground: #00ff00;
+  --background: #000000;
+}
+
+/* Force dark mode */
+:root[class~="dark"],
+[data-theme="dark"] {
+  --foreground: #00ff00;
+  --background: #000000;
 }
 
 html {
-  background: #000000;
+  background: var(--background);
+  min-height: 100%;
+  overflow-x: hidden;
 }
 
 body {
-  color: #00ff00;
-  background: #000000;
+  color: var(--foreground);
+  background: var(--background);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure all text maintains the terminal green color */
+* {
+  color: var(--foreground);
 }
 
 @font-face {
