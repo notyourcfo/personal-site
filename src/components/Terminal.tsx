@@ -165,7 +165,7 @@ changelog:
       className="w-full h-full flex flex-col rounded-lg overflow-hidden shadow-lg border border-green-500/20"
     >
       {/* Terminal Header */}
-      <div className="bg-gray-800/80 backdrop-blur-[2px] px-4 py-2 flex items-center">
+      <div className="bg-gray-900 px-4 py-2 flex items-center">
         <div className="flex gap-2">
           <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500" />
           <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500" />
@@ -176,7 +176,7 @@ changelog:
 
       {/* Terminal Content */}
       <div
-        className="flex-1 bg-black/60 dark:bg-black/80 backdrop-blur-[2px] text-green-400 p-2 sm:p-4 font-mono overflow-auto transition-colors duration-200 retro-terminal"
+        className="flex-1 bg-terminal-bg text-terminal-text p-2 sm:p-4 font-mono overflow-auto retro-terminal"
         ref={terminalRef}
       >
         <div className="space-y-2 text-sm sm:text-base whitespace-pre-wrap">
@@ -184,25 +184,25 @@ changelog:
             <div key={i} className="space-y-1">
               {entry.command && (
                 <div className="flex flex-wrap sm:flex-nowrap items-center">
-                  <span className="text-blue-400 dark:text-blue-500">{entry.path}</span>
-                  <span className="text-yellow-400 dark:text-yellow-500 ml-1 sm:ml-2">$</span>
+                  <span className="text-blue-400">{entry.path}</span>
+                  <span className="text-yellow-400 ml-1 sm:ml-2">$</span>
                   <span className="ml-1 sm:ml-2 break-all">{entry.command}</span>
                 </div>
               )}
-              <div className={`whitespace-pre-wrap break-words ${entry.isError ? 'text-red-500 dark:text-red-400' : ''}`}>
+              <div className={`whitespace-pre-wrap break-words ${entry.isError ? 'text-red-400' : ''}`}>
                 {entry.output}
               </div>
             </div>
           ))}
           <div className="flex flex-wrap sm:flex-nowrap items-center">
-            <span className="text-blue-400 dark:text-blue-500">{currentPath}</span>
-            <span className="text-yellow-400 dark:text-yellow-500 ml-1 sm:ml-2">$</span>
+            <span className="text-blue-400">{currentPath}</span>
+            <span className="text-yellow-400 ml-1 sm:ml-2">$</span>
             <input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleSubmit}
-              className="ml-1 sm:ml-2 bg-transparent outline-none flex-1 min-w-[200px] text-green-400 dark:text-green-300"
+              className="ml-1 sm:ml-2 bg-transparent outline-none flex-1 min-w-[200px] text-terminal-text"
               autoFocus
               onFocus={(e) => {
                 const viewport = document.querySelector('meta[name=viewport]')
