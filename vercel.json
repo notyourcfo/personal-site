@@ -1,10 +1,4 @@
 {
   "version": 2,
-  "framework": "nextjs",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next@14.2.29"
-    }
-  ]
+  "framework": "nextjs"
 } 
