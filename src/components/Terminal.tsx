@@ -37,12 +37,11 @@ this is yusuf! type 'help' to see available commands.` }: TerminalProps) {
     help: () => `available commands:
   about - about me
   projects - check out my projects
-  experience - my work experience
+  experience - work experience
   community - community work
   contact - how to reach me
   clear - clear terminal
   help - show this message
-  theme - toggle dark/light mode
   version - check last update`,
     
     about: () => `hey! 
@@ -58,7 +57,7 @@ exactly on the 10th of April, i left all my work and followed the exact same cyc
 
 2. scenefinder (april 2025 - present)
    - a tool to discover movies from short clips
-   - like shazam, but for movies
+   - kinda likeshazam, but for movies
    - type 'scenefinder' to visit the website`,
     
     experience: () => `my work experience:
@@ -74,7 +73,7 @@ exactly on the 10th of April, i left all my work and followed the exact same cyc
    - founder
    - created antiscrolling community
 
-4. mumbai ice cream store (march 2024 - april 2024)
+4. old mumbai ice cream store (march 2024 - april 2024)
    - sales representative
    - started working at age 17`,
 
@@ -109,11 +108,6 @@ type any of these commands to open the respective profile:
       return ''
     },
     
-    theme: () => {
-      setTheme(theme === 'dark' ? 'light' : 'dark')
-      return `switched to ${theme === 'dark' ? 'light' : 'dark'} theme`
-    },
-
     version: () => `terminal portfolio v1.0.0
 last updated: march 6, 2025 19:29
 
