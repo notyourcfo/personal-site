@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Terminal Portfolio",
-  description: "A terminal-style personal website",
+  description: "A terminal-style personal website"
   themeColor: "#000000"
 };
 
