@@ -4,13 +4,13 @@ A retro-style terminal portfolio website built with Next.js and TypeScript, feat
 
 ## Features
 
-- 🖥️ Retro Terminal Interface
+-  Retro Terminal Interface
   - Classic CRT monitor effect with scan lines
   - RGB text shadow animation
   - Pixelated retro font (VT323)
   - Dark/Light theme support
 
-- 💻 Interactive Commands
+-  Interactive Commands
   - `help` - List all available commands
   - `about` - Personal introduction
   - `projects` - View project showcase
@@ -20,7 +20,7 @@ A retro-style terminal portfolio website built with Next.js and TypeScript, feat
   - `theme` - Toggle dark/light mode
   - `version` - Check last update
 
-- 🔗 Quick Access Links
+-  Quick Access Links
   - Direct commands for social media profiles
   - GitHub, Twitter, LinkedIn, Instagram, YouTube
   - Email contact
