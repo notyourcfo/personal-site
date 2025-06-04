@@ -85,7 +85,7 @@ exactly on the 10th of April, i left all my work and followed the exact same cyc
 
 4. old mumbai ice cream store (march 2024 - april 2024)
    - sales representative
-   - started working at age 17`,
+   - started working at age 16`,
 
     community: () => `community work:
 
