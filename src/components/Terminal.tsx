@@ -38,7 +38,7 @@ this is yusuf! type 'help' to see available commands.` }: TerminalProps) {
     instagram: 'https://www.instagram.com/notyourcfo/',
     twitter: 'https://x.com/notyourcfo',
     x: 'https://x.com/notyourcfo',
-    linkedin: 'www.linkedin.com/in/notyourcfo',
+    linkedin: 'https://www.linkedin.com/in/notyourcfo?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     youtube: 'https://www.youtube.com/@notyourcfo',
     email: 'mailto:usef@techhustlr.space'
   }
