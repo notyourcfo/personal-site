@@ -23,7 +23,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="dark" style={{ colorScheme: 'dark' }}>
       <head>
         <meta name="color-scheme" content="dark" />
-        <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
       </head>
       <body className={`${inter.className} bg-black text-[#00ff00]`}>
         <ThemeProvider
