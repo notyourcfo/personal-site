@@ -8,7 +8,6 @@ A retro-style terminal website built with Next.js and TypeScript, featuring a no
   - Classic CRT monitor effect with scan lines
   - RGB text shadow animation
   - Pixelated retro font (VT323)
-  - Dark/Light theme support
 
 -  Interactive Commands
   - `help` - List all available commands
