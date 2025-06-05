@@ -1,10 +1,10 @@
-# Terminal Portfolio Website
+# Terminal personal site.
 
-A retro-style terminal portfolio website built with Next.js and TypeScript, featuring a nostalgic CRT monitor effect and interactive command-line interface.
+A retro-style terminal website built with Next.js and TypeScript, featuring a nostalgic CRT monitor effect and interactive command-line interface.
 
 ## Features
 
--  Retro Terminal Interface
+  - Retro Terminal Interface
   - Classic CRT monitor effect with scan lines
   - RGB text shadow animation
   - Pixelated retro font (VT323)
@@ -17,7 +17,6 @@ A retro-style terminal portfolio website built with Next.js and TypeScript, feat
   - `experience` - Professional background
   - `community` - Community involvement
   - `contact` - Contact information
-  - `theme` - Toggle dark/light mode
   - `version` - Check last update
 
 -  Quick Access Links
@@ -33,7 +32,7 @@ A retro-style terminal portfolio website built with Next.js and TypeScript, feat
 - Framer Motion
 - next-themes
 
-## Getting Started
+## If u wanna make one for yourself.
 
 1. Clone the repository:
    ```bash
@@ -55,7 +54,7 @@ A retro-style terminal portfolio website built with Next.js and TypeScript, feat
 
 ## Deployment
 
-This site is deployed on Vercel. Any push to the main branch will trigger an automatic deployment.
+This site is deployed on Vercel anyone curious to checkout [usef.world](usef.world)
 
 ## Project Structure
 
@@ -77,8 +76,8 @@ src/
 
 ## License
 
-MIT License - feel free to use this code for your own portfolio!
+MIT License - feel free to use this code for your own personal site !
 
 ## Author
 
-Yusuf - [@notyourcfo](https://twitter.com/notyourcfo)
+Yusuf - [@notyourcfo](https://instagram.com/notyourcfo)
