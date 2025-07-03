@@ -22,7 +22,7 @@ const CODE_SNIPPETS = [
   'type Props = {',
   'interface CommandHistory {',
   'yo! this is yusuf!',
-  'const projects = ["techhustlr", "scenefinder"]',
+  'const projects = ["*******", "scenefinder"]',
   'function handleSubmit(e: React.KeyboardEvent) {',
   'setHistory(prev => [...prev, { command: cmd }])',
 ]

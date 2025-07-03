@@ -40,7 +40,7 @@ this is yusuf! type 'help' to see available commands.` }: TerminalProps) {
     x: 'https://x.com/notyourcfo',
     linkedin: 'https://www.linkedin.com/in/notyourcfo',
     youtube: 'https://www.youtube.com/@notyourcfo',
-    email: 'mailto:usef@techhustlr.space'
+    email: 'mailto:contact@usef.world'
   }
 
   const commands: Commands = {
@@ -61,9 +61,8 @@ exactly on the 10th of April, i left all my work and followed the exact same cyc
     
     projects: () => `my projects:
 
-1. techhustlr (april 2025 - present)
-   - newsletter for cs students and tech employees
-   - type 'techhustlr' to visit the website
+1. ******* (april 2025 - july 2025)
+   - 5fig exit
 
 2. scenefinder (april 2025 - present)
    - a tool to discover movies from short clips
@@ -103,11 +102,6 @@ type any of these commands to open the respective profile:
   - youtube
   - email`,
 
-    techhustlr: () => {
-      window.open('https://www.techhustlr.space/', '_blank')
-      return 'opening techhustlr website...'
-    },
-    
     scenefinder: () => {
       window.open('https://scenefinder.vercel.app/', '_blank')
       return 'opening scenefinder website...'
