@@ -61,8 +61,9 @@ exactly on the 10th of April, i left all my work and followed the exact same cyc
     
     projects: () => `my projects:
 
-1. ******* (april 2024 - july 2024)
-   - 4fig exit
+1. techhustlr (april 2024 - july 2024)
+   - Newsletter forb cs major and junior dev looking for opportunities.
+     - type 'techhustlr' to visit the website`,
 
 2. scenefinder (april 2024 - present)
    - a tool to discover movies from short clips
@@ -106,7 +107,10 @@ type any of these commands to open the respective profile:
       window.open('https://scenefinder.vercel.app/', '_blank')
       return 'opening scenefinder website...'
     },
-    
+     techhustlr: () => {
+      window.open('https://techhsutlr.substack.com', '_blank')
+      return 'opening Substack website...'
+    },
     clear: () => {
       setHistory([
         { command: '', output: 'yo!' },
