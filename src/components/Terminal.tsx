@@ -60,7 +60,6 @@ a student on a drop year, exploring and building things.
 exactly on the 10th of April, i left all my work and followed the exact same cycle: build something, make ppl check out the stuff i made, make it better, and then repeat the same process.`,
     
     projects: () => `my projects:
-
 1. techhustlr (april 2025 - july 2025)
    - Newsletter for CS majors and junior dev looking for opportunities
    - 5k+ Readers.
