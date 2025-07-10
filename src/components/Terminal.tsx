@@ -61,18 +61,19 @@ exactly on the 10th of April, i left all my work and followed the exact same cyc
     
     projects: () => `my projects:
 
-1. techhustlr (april 2024 - present)
-   - Newsletter forb cs major and junior dev looking for opportunities.
-     - type 'techhustlr' to visit the website`,
+1. techhustlr (april 2025 - july 2025)
+   - Newsletter for CS majors and junior dev looking for opportunities
+   - 5k+ Readers.
+   - type 'techhustlr' to visit the website
 
-2. scenefinder (april 2024 - present)
+2. scenefinder (april 2025 - present)
    - a tool to discover movies from short clips
    - kinda likeshazam, but for movies
    - type 'scenefinder' to visit the website`,
     
     experience: () => `my work experience:
 
-1. pocket fund (march 2024 - april 2024)
+1. pocket fund (march 2025 - april 2025)
    - founder office intern
 
 2. educational content sales (november 2024 - december 2024)
@@ -89,7 +90,7 @@ exactly on the 10th of April, i left all my work and followed the exact same cyc
 
     community: () => `community work:
 
-1. homieswholikesbizness (december 2024 - april 2024)
+1. homieswholikesbizness (december 2024 - april 2025)
    - managed Discord community
    - hosted guest lectures, co-working sessions and a couple more fun events`,
 
@@ -107,10 +108,12 @@ type any of these commands to open the respective profile:
       window.open('https://scenefinder.vercel.app/', '_blank')
       return 'opening scenefinder website...'
     },
-     techhustlr: () => {
-      window.open('https://techhsutlr.substack.com', '_blank')
-      return 'opening Substack website...'
+
+    techhustlr: () => {
+      window.open('https://techhustlr.space/', '_blank')
+      return 'opening techhustlr website...'
     },
+    
     clear: () => {
       setHistory([
         { command: '', output: 'yo!' },
@@ -120,7 +123,7 @@ type any of these commands to open the respective profile:
     },
     
     version: () => `terminal portfolio v1.0.0
-last updated: march 6, 2024 19:29
+last updated: march 6, 2025 19:29
 
 changelog:
 - created site from scratch`,
@@ -163,7 +166,7 @@ changelog:
         }
         return newHistory
       })
-    }, 400) // 400ms delay
+    }, 500) // 500ms delay
   }
 
   const handleSubmit = (e: React.KeyboardEvent) => {
@@ -201,14 +204,14 @@ changelog:
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="w-full h-full flex flex-col rounded-lg overflow-hidden shadow-lg border border-green-400/20"
+      className="w-full h-full flex flex-col rounded-lg overflow-hidden shadow-lg border border-green-500/20"
     >
       {/* Terminal Header */}
       <div className="bg-gray-900 px-4 py-2 flex items-center">
         <div className="flex gap-2">
-          <div className="w-2.4 h-2.4 sm:w-3 sm:h-3 rounded-full bg-red-400" />
-          <div className="w-2.4 h-2.4 sm:w-3 sm:h-3 rounded-full bg-yellow-400" />
-          <div className="w-2.4 h-2.4 sm:w-3 sm:h-3 rounded-full bg-green-400" />
+          <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500" />
+          <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500" />
+          <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500" />
         </div>
         <div className="flex-1 text-center text-xs sm:text-sm text-gray-400">terminal</div>
       </div>
