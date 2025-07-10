@@ -61,7 +61,7 @@ exactly on the 10th of April, i left all my work and followed the exact same cyc
     
     projects: () => `my projects:
 
-1. techhustlr (april 2024 - july 2024)
+1. techhustlr (april 2024 - present)
    - Newsletter forb cs major and junior dev looking for opportunities.
      - type 'techhustlr' to visit the website`,
 
