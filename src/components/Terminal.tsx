@@ -110,7 +110,7 @@ type any of these commands to open the respective profile:
     },
 
     techhustlr: () => {
-      window.open('https://techhustlr.space/', '_blank')
+      window.open('https://techhustlr.substack.com', '_blank')
       return 'opening techhustlr website...'
     },
     
