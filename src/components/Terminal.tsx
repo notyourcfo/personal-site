@@ -71,7 +71,6 @@ exactly on the 10th of April, i left all my work and followed the exact same cyc
    - type 'scenefinder' to visit the website`,
     
     experience: () => `my work experience:
-
 1. pocket fund (march 2025 - april 2025)
    - founder office intern
 
@@ -94,7 +93,6 @@ exactly on the 10th of April, i left all my work and followed the exact same cyc
    - hosted guest lectures, co-working sessions and a couple more fun events`,
 
     contact: () => `how to reach me:
-
 type any of these commands to open the respective profile:
   - github
   - instagram
