@@ -1,4 +1,4 @@
-# Terminal personal site.
+# Terminal site.
 
 A retro-style terminal website built with Next.js and TypeScript, featuring a nostalgic CRT monitor effect and interactive command-line interface.
 
